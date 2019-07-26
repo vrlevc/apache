@@ -7,4 +7,8 @@ svn co "http://svn.apache.org/repos/asf/apr/apr/trunk" "srclib/apr"
 ./buildconf
 ./configure --with-included-apr
 make
-make install
+sudo make install
+
+sudo ./usr/local/apache2/bin/apachectl start
+curl "http://localhost"
+sudo ./usr/local/apache2/bin/apachectl stop
