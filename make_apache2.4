@@ -1,10 +1,10 @@
 #!/bin/bash
 
-yum -y install apt-util apr-devel pcre-devel
-svn checkout http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/ httpd-2.4
-cd ./httpd-2.4
-svn co http://svn.apache.org/repos/asf/apr/apr/trunk srclib/apr
+sudo yum -y install apr-util apr-devel pcre-devel expat-devel
+svn checkout "http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/" "httpd-2.4"
+cd "./httpd-2.4"
+svn co "http://svn.apache.org/repos/asf/apr/apr/trunk" "srclib/apr"
 ./buildconf
-./configure
+./configure --with-included-apr
 make
-
+make install
