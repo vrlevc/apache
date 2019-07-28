@@ -5,7 +5,7 @@ svn checkout "http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/" "http
 cd "./httpd-2.4"
 svn co "http://svn.apache.org/repos/asf/apr/apr/trunk" "srclib/apr"
 ./buildconf
-./configure --with-included-apr
+./configure --with-included-apr CFLAGS="-g"
 make
 sudo make install
 
